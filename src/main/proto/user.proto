@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "me.study";
+option java_outer_classname = "UserProto";
+
+import "google/protobuf/timestamp.proto";
+
+message User {
+  int32 id = 1;
+  string name = 2;
+  google.protobuf.Timestamp createdAt = 3;
+}
+
+message UserRequest {
+  int32 id = 1;
+}
+
+message UserResponse {
+  int32 id = 1;
+  string name = 2;
+}
+
+service UserService {
+  rpc getUser(UserRequest) returns (UserResponse);
+}
