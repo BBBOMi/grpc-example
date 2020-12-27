@@ -77,3 +77,17 @@ project(":grpc-server") {
         implementation("io.grpc:grpc-all:1.34.1")
     }
 }
+
+project(":grpc-client") {
+    apply(plugin = "java")
+    apply(plugin = "kotlin")
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation(project(":"))
+        implementation("io.grpc:grpc-all:1.34.1")
+    }
+}
