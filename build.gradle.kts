@@ -63,3 +63,17 @@ protobuf {
         }
     }
 }
+
+project(":grpc-server") {
+    apply(plugin = "java")
+    apply(plugin = "kotlin")
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation(project(":"))
+        implementation("io.grpc:grpc-all:1.34.1")
+    }
+}
